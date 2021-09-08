@@ -1,5 +1,5 @@
 # rpi-wifi-ledmatrix-conroller
-A simple Flask-App for the RaspberryPi to controll a LED-Matrix with MAX-7219 chip via a nice web-interface.
+A simple Flask-App for the RaspberryPi to controll a LED-Matrix with MAX-7219 chip via a nice web-interface. You can use it to draw your own pixel-image onto the matrix, display a rolling text message or display one of the example images on the LED-Matrix.
 
 ## How to use
 ### Required libraries:
