@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';">
+    <link rel="icon" href="" type="image/svg+xml">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js"></script>
+  </head>
+  <body>
+   <h1>Björns Raspberry Pi Control</h1>
+   <div id="matrix-controller">
+       <h2>{{ title }}</h2>
+       <p>Zeichne hier dein eigenes 8x8 Pixel Bild und lasse es auf der LED-Matrix anzeigen. Du kannst auch aus einem der Beispiele unten auswählen oder 
+       einen Text eingeben, der dann auf der Matrix abläuft.</p>
+       <div id=matrix-container>
+       {% for i in range(64) %}
+           <span class="matrix-element" id="{{ i }}"></span>
+       {% endfor %}
+       </div>
+       <div class="button-container">
+           <button id="send_matrix">Anzeigen</button>
+           <button id="reset_matrix">Reset</button>
+       </div>
+       <form id="matrix-texteingabe">
+           <input type="text" id="usertext" placeholder="Hier Text eingeben..." autocomplete="off" required>
+           <input type="submit" value="submit">
+       </form>    
+       <div id="matrix-examples">
+       {% for item in examples %}
+           <img class="example_img" id="{{ item }}" src="/static/img/{{ item }}">
+       {% endfor %}
+       </div>
+   </div>
+  </body>
+</html>
