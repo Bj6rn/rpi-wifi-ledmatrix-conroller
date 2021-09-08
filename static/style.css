@@ -21,7 +21,7 @@ body {
 :root {
     --main-color: #222831;
     --sub-color: #393e46;
-    --accent-color: #d65a31;
+    --accent-color: #ac3232;
     --text-color: #33b96b;
     --body-padding: 15px;
     --matrix-controller-width: clamp(200px, 500px, calc(100vW - var(--body-padding) * 2));
