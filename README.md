@@ -13,7 +13,7 @@ Please make sure these libraries are installed, so the programm can work accordi
 ---
 ### Connect the led-matrix to the RPI:
 I made the following connections between my LED-Matrix and my RaspberryPi.
-|Function|Matrix Pin  |RPI Pin           |
+|Function   |Matrix Pin  |RPI Pin           |
 |:---------:|:----------:|:----------------:|
 |Power      |VCC         |3.3v              |
 |Ground     |GND         |GND               |
@@ -26,4 +26,4 @@ I made the following connections between my LED-Matrix and my RaspberryPi.
 1.  clone this repository onto your RPI and move into the folder
 2.  start the _webapp_ledmatrix.py_
 3.  open a webbrowser on any device within the same network of the RPI
-    * Access the App with: `RPI-IP-Address`_:6060/led-matrix_
+    * Access the App with: `RPI_IP-Address`_:6060/led-matrix_
