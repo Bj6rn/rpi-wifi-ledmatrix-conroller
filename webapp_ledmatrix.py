@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 #-*- coding: utf-8 -*-
 from time import sleep
-from signal import pause
 from flask import Flask, render_template, request
 import myledmatrix 
 import os, fnmatch
@@ -23,12 +22,12 @@ def get_matrix_examples():
 def led_matrix():
     if request.method == 'POST': # POST request
         data = request.get_json()
-        if "matrix-board" in data: # wenn Pixel-Liste übergeben wurde, wird sie ausgegeben
+        if "matrix-board" in data: # if a "pixel-array" is transmitted in the request, then it gets output to the matrix
             myledmatrix.drawpixelarray(data["matrix-board"])
-        elif "matrix-example" in data: # wenn example-image übergeben wurde, wird diese ausgegen
+        elif "matrix-example" in data: # if one of the example-images is transmitted in the request, then it gets output to the matrix
             filepath = "static/img/" + data["matrix-example"]
             myledmatrix.drawimage(filepath)
-        elif "usertext" in data: # wenn usertext übergeben wurde, wird diese als scrolling Text ausgegeben
+        elif "usertext" in data: # if some usertext is transmitted in the request, then it gets output as a scrolling text to the matrix
             myledmatrix.scrollingtext(data["usertext"])
         else: 
             myledmatrix.resetmatrix()
