@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 #-*- coding: utf-8 -*-
 from time import sleep
-from signal import pause
 from PIL import Image
 from luma.core.interface.serial import spi, noop
 from luma.core.render import canvas
@@ -9,7 +8,7 @@ from luma.core.legacy import show_message
 from luma.core.legacy.font import proportional, CP437_FONT, ATARI_FONT, LCD_FONT
 from luma.led_matrix.device import max7219
 
-serial = spi(port=1, device=2, gpio=noop())
+serial = spi(port=0, device=0, gpio=noop())
 device = max7219(serial)
 
 def drawimage(file_path):
@@ -61,14 +60,7 @@ def scrollingtext(text):
 if __name__ == "__main__":
     try:
         print("program start (strg+c to end)")
-        drawimage("/home/pi/8x8_Pixel-Art/zauberer.png")
-        sleep(3)
-        x = [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1]
-        drawpixelarray(x)
-        sleep(3)
         scrollingtext("Hallo WELT")
-        sleep(1)
-        drawanimation("/home/pi/8x8_Pixel-Art/animations/explosion.png")
     except KeyboardInterrupt:
         pass
     finally:

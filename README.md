@@ -1,2 +1,29 @@
 # rpi-wifi-ledmatrix-conroller
-simple Flask-App to controll a Led-Matrix (max-7219) over a web-interface 
+A simple Flask-App for the RaspberryPi to controll a LED-Matrix with MAX-7219 chip via a nice web-interface.
+
+## How to use
+### Required libraries:
+* _luma.core_
+* _luma.led-matrix_
+* _pillow_
+* _flask_
+
+Please make sure these libraries are installed, so the programm can work accordingly.
+
+---
+### Connect the led-matrix to the RPI:
+I made the following connections between my LED-Matrix and my RaspberryPi.
+|Function   |Matrix Pin  |RPI Pin           |
+|:---------:|:----------:|:----------------:|
+|Power      |VCC         |3.3v              |
+|Ground     |GND         |GND               |
+|Data in    |DIN         |GPIO 10 (MOSI)    |
+|Chip select|CS          |GPIO 8 (SPI CS0)  |
+|Clock      |CLK         |GPIO 11 (SPI CLK) |
+
+---
+### Downloading and starting the App
+1.  clone this repository onto your RPI and move into the folder
+2.  start the _webapp_ledmatrix.py_
+3.  open a webbrowser on any device within the same network of the RPI
+    * Access the App with: `RPI_IP-Address`_:6060/led-matrix_
