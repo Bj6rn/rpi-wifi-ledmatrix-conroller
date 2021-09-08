@@ -22,7 +22,7 @@ I made the following connections between my LED-Matrix and my RaspberryPi.
 |Clock      |CLK         |GPIO 11 (SPI CLK) |
 
 ---
-### Downloading and starting the App
+### Downloading and starting the App:
 1.  clone this repository onto your RPI and move into the folder
 2.  start the _webapp_ledmatrix.py_
 3.  open a webbrowser on any device within the same network of the RPI
