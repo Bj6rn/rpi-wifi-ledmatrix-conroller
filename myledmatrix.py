@@ -8,7 +8,7 @@ from luma.core.legacy import show_message
 from luma.core.legacy.font import proportional, CP437_FONT, ATARI_FONT, LCD_FONT
 from luma.led_matrix.device import max7219
 
-serial = spi(port=1, device=2, gpio=noop())
+serial = spi(port=0, device=0, gpio=noop())
 device = max7219(serial)
 
 def drawimage(file_path):
